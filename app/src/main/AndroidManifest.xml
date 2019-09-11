@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MahasiswaList" />
+        <activity
+            android:name=".inputdata"
+            android:label="@string/title_activity_inputdata"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".List_Data"
+            android:label="@string/title_activity_list__data"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

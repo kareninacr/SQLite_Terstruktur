@@ -11,7 +11,7 @@
         android:layout_height="145dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="115dp"
         android:src="@drawable/student1" />
 
@@ -24,7 +24,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="#C11B17"
         android:orientation="horizontal">
 
@@ -58,7 +58,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="#1569C7"
         android:orientation="horizontal">
 
@@ -92,7 +92,7 @@
     android:layout_alignParentEnd="true"
     android:layout_marginStart="80dp"
     android:layout_marginEnd="80dp"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="30dp"
     android:background="#C68E17	"
     android:orientation="horizontal">
 
