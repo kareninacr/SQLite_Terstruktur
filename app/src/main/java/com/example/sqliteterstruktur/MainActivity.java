@@ -10,13 +10,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.splash_screen);
 
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try{
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                 }catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }finally {
