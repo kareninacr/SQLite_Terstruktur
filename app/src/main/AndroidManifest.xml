@@ -10,13 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".inputdata"
+            android:name=".InputData"
             android:label="@string/title_activity_inputdata"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".List_Data"
-            android:label="@string/title_activity_list__data"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DashboardActivity"></activity>
     </application>
 
 </manifest>

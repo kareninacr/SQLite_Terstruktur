@@ -24,7 +24,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
-        Intent InputData = new Intent(DashboardActivity.this, );
+        Intent InputData = new Intent(DashboardActivity.this, InputData.class);
         startActivity(InputData);
 
     }
