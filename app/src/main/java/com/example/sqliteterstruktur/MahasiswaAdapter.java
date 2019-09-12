@@ -16,11 +16,11 @@ import java.util.List;
 public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.UserViewHolder> {
     Context context;
     OnUserClickListener listener;
-    List<Mahasiswa> listMahasiswa;
+    List<Mahasiswa> listPersonInfo;
 
-    public MahasiswaAdapter(Context context, List<Mahasiswa> listMahasiswa, OnUserClickListener listener) {
+    public MahasiswaAdapter(Context context, List<Mahasiswa> listPersonInfo, OnUserClickListener listener) {
         this.context = context;
-        this.listMahasiswa = listMahasiswa;
+        this.listPersonInfo = listPersonInfo;
         this.listener = listener;
     }
 
@@ -38,9 +38,15 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.User
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, final int position) {
-        final Mahasiswa currentMahasiswa = listMahasiswa.get(position);
+        final Mahasiswa currentMahasiswa = listPersonInfo.get(position);
         holder.edt_nomor.setText(currentMahasiswa.getNomor());
         holder.edt_nama.setText(currentMahasiswa.getNama());
+        holder.edt_nama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choice(currentMahasiswa);
+            }
+        });
         holder.edt_tanggal.setText(currentMahasiswa.getTanggal());
         holder.edt_jenkel.setText(currentMahasiswa.getJenkel());
         holder.edt_alamat.setText(currentMahasiswa.getAlamat());
@@ -48,7 +54,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.User
 
     @Override
     public int getItemCount() {
-        return listMahasiswa.size();
+        return listPersonInfo.size();
 
     }
 

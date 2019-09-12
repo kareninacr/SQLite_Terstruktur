@@ -27,6 +27,8 @@ public class InputData extends AppCompatActivity implements View.OnClickListener
                 po.setJenkel(edtjenkel.getText().toString());
                 po.setTanggal(edttanggal.getText().toString());
                 po.setAlamat(edtalamat.getText().toString());
+
+                db.insert(po);
             }
         });
 
