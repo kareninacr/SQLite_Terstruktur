@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailData extends AppCompatActivity {
     TextView tx_nama, tx_no, tx_tanggal, tx_alamat, tx_jenkel;
+    public static String CURRENT_MAHASISWA = "extra_mahasiswa";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

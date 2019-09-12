@@ -10,9 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 
 public class UpdateData extends AppCompatActivity {
-//    public static String CURRENT_MAHASISWA = "extra_mahasiswa";
+    public static String CURRENT_MAHASISWA = "extra_mahasiswa";
     EditText edt_nomor, edt_nama, edt_tanggal, edt_jenkel, edt_alamat;
     TextView tx_simpan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

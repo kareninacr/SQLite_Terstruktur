@@ -2,6 +2,7 @@ package com.example.sqliteterstruktur;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -49,7 +50,7 @@ public class MainCreate extends AppCompatActivity implements MahasiswaAdapter.On
     public void onUserClick(Mahasiswa currentMahasiswa, String action) {
         if(action.equals("Edit")) {
             Intent i = new Intent(MainCreate.this, UpdateData.class);
-            i.putExtra(UpdateData.Mahasiswa, currentMahasiswa);
+            i.putExtra(UpdateData.CURRENT_MAHASISWA, currentMahasiswa);
             startActivity(i);
         }
         if(action.equals("Delete")) {
@@ -59,7 +60,7 @@ public class MainCreate extends AppCompatActivity implements MahasiswaAdapter.On
         }
         if(action.equals("View")) {
             Intent i = new Intent(MainCreate.this,DetailData.class);
-            i.putExtra(DetailData.Mahasiswa, currentMahasiswa);
+            i.putExtra(DetailData.CURRENT_MAHASISWA,currentMahasiswa);
             startActivity(i);
         }
     }
