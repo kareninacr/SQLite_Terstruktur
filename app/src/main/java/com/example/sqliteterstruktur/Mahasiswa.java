@@ -1,15 +1,14 @@
 package com.example.sqliteterstruktur;
 
 public class Mahasiswa {
-    String nama,tanggal,jenkel,alamat;
-    int nomor;
+    String nama,tanggal,jenkel,alamat,nomor;
 
 
-    public int getNomor() {
+    public String  getNomor() {
         return nomor;
     }
 
-    public void setNomor(int nomor)
+    public void setNomor(String nomor)
     {
         this.nomor = nomor;
     }
