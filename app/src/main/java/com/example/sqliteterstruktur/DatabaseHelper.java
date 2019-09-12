@@ -19,13 +19,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_JENKEL="jenkel";
     private static final String KEY_ALAMAT="alamat";
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(Context context)
+    {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createUserTable="CREATE TABLE "+TABLE_NAME+"("+KEY_NOMOR+" PRIMARY KEY,"+KEY_NAMA+" TEXT,"+KEY_TANGGAL+" TEXT,"+KEY_JENKEL+" TEXT,"+KEY_ALAMAT+" TEXT"+")";
+        final String createUserTable ="CREATE TABLE "+TABLE_NAME+"("+KEY_NOMOR+" TEXT PRIMARY KEY,"+KEY_NAMA+" TEXT,"+KEY_TANGGAL+" TEXT,"+KEY_JENKEL+" TEXT,"+KEY_ALAMAT+" TEXT"+")";
         db.execSQL(createUserTable);
     }
 
@@ -35,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
         onCreate(db);
     }
+
 
     public void insert(Mahasiswa mahasiswa) {
         SQLiteDatabase db = getWritableDatabase();
@@ -52,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<Mahasiswa> siswaList = new ArrayList<Mahasiswa>();
 
         SQLiteDatabase db = getReadableDatabase();
-        String[] columns = {KEY_NAMA, KEY_NAMA, KEY_TANGGAL, KEY_JENKEL, KEY_ALAMAT};
+        String[] columns = {KEY_NOMOR, KEY_NAMA, KEY_TANGGAL, KEY_JENKEL, KEY_ALAMAT};
 
         Cursor c = db.query(TABLE_NAME, columns, null, null, null, null, null);
 
