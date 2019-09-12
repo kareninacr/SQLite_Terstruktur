@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_back_white_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Data"
+            android:textSize="23sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginLeft="35dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/toolbar_update">
+
+        <TextView
+            android:id="@+id/lbl_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Nomor"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:id="@+id/linlay_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lbl_nomor">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_create_black_24dp"/>
+
+            <EditText
+                android:id="@+id/edt_nomor"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/lbl_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linlay_nomor"
+            android:layout_marginTop="20dp"
+            android:text="Nama"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/linlay_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lbl_nama">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_person_black_24dp"/>
+
+            <EditText
+                android:id="@+id/edt_nama"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lbl_tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linlay_nama"
+            android:layout_marginTop="20dp"
+            android:text="Tanggal Lahir "
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/linlay_tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lbl_tanggal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_date_range_black_24dp"/>
+
+            <EditText
+                android:id="@+id/edt_tanggal"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:hint="1993-12-08"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lbl_jenkel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linlay_tanggal"
+            android:layout_marginTop="20dp"
+            android:text="Jenis Kelamin"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/linlay_jenkel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lbl_jenkel">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_person_black_24dp"/>
+
+            <EditText
+                android:id="@+id/edt_jenkel"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:hint="L atau P"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lbl_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linlay_jenkel"
+            android:layout_marginTop="20dp"
+            android:text="Alamat"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/linlay_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/lbl_alamat">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_place_black_24dp"/>
+
+            <EditText
+                android:id="@+id/edt_alamat"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/linlay_alamat"
+            android:layout_marginLeft="224dp"
+            android:layout_marginTop="60dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_save_black_24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:textSize="22sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

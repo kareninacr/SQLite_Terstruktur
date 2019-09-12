@@ -3,15 +3,44 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_back_white_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input Data"
+            android:textSize="23sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginLeft="35dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/toolbar_input">
 
     <TextView
         android:id="@+id/lbl_nomor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="30dp"
         android:text="Nomor"
         android:textSize="16sp"/>
 
@@ -20,8 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/lbl_nomor"
-        android:layout_marginLeft="40dp">
+        android:layout_below="@+id/lbl_nomor">
 
         <ImageView
             android:layout_width="30dp"
@@ -41,7 +69,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linlay_nomor"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:text="Nama"
         android:textSize="18sp"/>
@@ -51,8 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/lbl_nama"
-        android:layout_marginLeft="40dp">
+        android:layout_below="@+id/lbl_nama">
 
         <ImageView
             android:layout_width="30dp"
@@ -71,7 +97,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linlay_nama"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:text="Tanggal Lahir "
         android:textSize="18sp"/>
@@ -81,8 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/lbl_tanggal"
-        android:layout_marginLeft="40dp">
+        android:layout_below="@+id/lbl_tanggal">
 
         <ImageView
             android:layout_width="30dp"
@@ -102,7 +126,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linlay_tanggal"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:text="Jenis Kelamin"
         android:textSize="18sp"/>
@@ -112,8 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/lbl_jenkel"
-        android:layout_marginLeft="40dp">
+        android:layout_below="@+id/lbl_jenkel">
 
         <ImageView
             android:layout_width="30dp"
@@ -133,7 +155,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linlay_jenkel"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:text="Alamat"
         android:textSize="18sp"/>
@@ -143,8 +164,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/lbl_alamat"
-        android:layout_marginLeft="40dp">
+        android:layout_below="@+id/lbl_alamat">
 
         <ImageView
             android:layout_width="30dp"
@@ -163,7 +183,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/linlay_alamat"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="224dp"
         android:layout_marginTop="60dp">
 
         <ImageView
@@ -172,10 +192,14 @@
             android:src="@drawable/ic_save_black_24dp"/>
 
         <TextView
+            android:id="@+id/tx_simpan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Simpan"
             android:textSize="22sp"/>
     </LinearLayout>
+    </RelativeLayout>
+
+
 
 </RelativeLayout>
