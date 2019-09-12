@@ -1,6 +1,8 @@
 package com.example.sqliteterstruktur;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,30 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.User
     @Override
     public int getItemCount() {
         return listMahasiswa.size();
+
+    }
+
+    public void choice(final Mahasiswa msh) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+        alertDialog.setTitle("Pilihan");
+        CharSequence[] items = {"Lihat Data", "Update Data", "Hapus Data"};
+        alertDialog.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                switch (i) {
+                    case 0 :
+                        viewData(msh);
+                        break;
+                    case 1 :
+                        updateData(msh);
+                        break;
+                    case 3:
+                        deleteData(msh);
+                        break;
+                }
+            }
+        });
+        alertDialog.show();
     }
 
     public class UserViewHolder extends RecyclerView.ViewHolder {
@@ -60,5 +86,14 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.User
             edt_jenkel  = itemView.findViewById(R.id.edt_jenkel);
             edt_alamat  = itemView.findViewById(R.id.edt_alamat);
         }
+    }
+    private void updateData(Mahasiswa currentMahasiswa) {
+        listener.onUserClick(currentMahasiswa, "Edit");
+    }
+    private void viewData(Mahasiswa currentMahasiswa) {
+        listener.onUserClick(currentMahasiswa, "View");
+    }
+    private void deleteData(Mahasiswa currentMahasiswa){
+        listener.onUserClick(currentMahasiswa, "Delete");
     }
 }
