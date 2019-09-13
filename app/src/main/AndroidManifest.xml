@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".MainCreate"></activity>
+        <activity android:name=".DetailData"></activity>
+        <activity android:name=".UpdateData"></activity>
     </application>
 
 </manifest>

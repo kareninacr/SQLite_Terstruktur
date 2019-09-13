@@ -21,7 +21,7 @@ public class UpdateData extends AppCompatActivity {
         setContentView(R.layout.update_data);
         Mahasiswa mahasiswa = new Mahasiswa();
 
-        edt_nomor.setText(mahasiswa.getNomor()+"");
+        edt_nomor.setText(Integer.parseInt(mahasiswa.getNomor()+""));
         edt_nama.setText(mahasiswa.getNama()+"");
         edt_tanggal.setText(mahasiswa.getTanggal()+"");
         edt_jenkel.setText(mahasiswa.getJenkel()+"");
@@ -32,7 +32,7 @@ public class UpdateData extends AppCompatActivity {
             public void onClick(View view) {
                 DatabaseHelper db = new DatabaseHelper(UpdateData.this);
                 Mahasiswa mahasiswa = new Mahasiswa();
-                mahasiswa.setNomor(edt_nomor.getText().toString());
+                mahasiswa.setNomor(Integer.parseInt(edt_nomor.getText().toString()));
                 mahasiswa.setNama(edt_nama.getText().toString());
                 mahasiswa.setTanggal(edt_tanggal.getText().toString());
                 mahasiswa.setJenkel(edt_jenkel.getText().toString());

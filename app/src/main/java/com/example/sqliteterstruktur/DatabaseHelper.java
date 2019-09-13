@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String createUserTable ="CREATE TABLE "+TABLE_NAME+"("+KEY_NOMOR+" TEXT PRIMARY KEY,"+KEY_NAMA+" TEXT,"+KEY_TANGGAL+" TEXT,"+KEY_JENKEL+" TEXT,"+KEY_ALAMAT+" TEXT"+")";
+        final String createUserTable ="CREATE TABLE "+TABLE_NAME+"("+KEY_NOMOR+" INTEGER PRIMARY KEY,"+KEY_NAMA+" TEXT,"+KEY_TANGGAL+" TEXT,"+KEY_JENKEL+" TEXT,"+KEY_ALAMAT+" TEXT"+")";
         db.execSQL(createUserTable);
     }
 
@@ -59,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = db.query(TABLE_NAME, columns, null, null, null, null, null);
 
         while (c.moveToNext()) {
-            String nomor = c.getString(0);
+            int nomor = c.getInt(0);
             String nama = c.getString(1);
             String tanggal = c.getString(2);
             String jenkel = c.getString(3);

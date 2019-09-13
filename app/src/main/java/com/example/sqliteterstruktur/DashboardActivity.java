@@ -20,6 +20,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.dashboard);
         InputData = (TextView)findViewById(R.id.tvinput);
         InputData.setOnClickListener(this);
+        LihatData = (TextView)findViewById(R.id.tvlihat);
         LihatData.setOnClickListener(this);
 
     }
