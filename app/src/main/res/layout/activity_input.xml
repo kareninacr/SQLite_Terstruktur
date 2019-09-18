@@ -32,8 +32,8 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="33dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="18dp"
         android:layout_below="@+id/toolbar_input">
 
     <TextView
@@ -179,6 +179,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/simpan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -192,7 +193,6 @@
             android:src="@drawable/ic_save_black_24dp"/>
 
         <TextView
-            android:id="@+id/tx_simpan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Simpan"

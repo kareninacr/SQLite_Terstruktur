@@ -11,7 +11,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DB_VERSION=1;
-    private static final String DB_NAME="StudentInfo";
+    private static final String DB_NAME="MahasiswaInfo";
     private static final String TABLE_NAME="tbl_siswa";
     private static final String KEY_NOMOR="nomor";
     private static final String KEY_NAMA="nama";
@@ -19,14 +19,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_JENKEL="jenkel";
     private static final String KEY_ALAMAT="alamat";
 
-    public DatabaseHelper(Context context)
-    {
+    public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String createUserTable ="CREATE TABLE "+TABLE_NAME+"("+KEY_NOMOR+" TEXT PRIMARY KEY,"+KEY_NAMA+" TEXT,"+KEY_TANGGAL+" TEXT,"+KEY_JENKEL+" TEXT,"+KEY_ALAMAT+" TEXT"+")";
+        final String createUserTable ="CREATE TABLE "+TABLE_NAME+"("+KEY_NOMOR+" INTEGER PRIMARY KEY,"+KEY_NAMA+" TEXT,"+KEY_TANGGAL+" TEXT,"+KEY_JENKEL+" TEXT,"+KEY_ALAMAT+" TEXT"+")";
         db.execSQL(createUserTable);
     }
 
@@ -36,7 +35,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
         onCreate(db);
     }
-
 
     public void insert(Mahasiswa mahasiswa) {
         SQLiteDatabase db = getWritableDatabase();
@@ -59,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = db.query(TABLE_NAME, columns, null, null, null, null, null);
 
         while (c.moveToNext()) {
-            String nomor = c.getString(0);
+            int nomor = c.getInt(0);
             String nama = c.getString(1);
             String tanggal = c.getString(2);
             String jenkel = c.getString(3);
@@ -71,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             mahasiswa.setTanggal(tanggal);
             mahasiswa.setJenkel(jenkel);
             mahasiswa.setAlamat(alamat);
+            siswaList.add(mahasiswa);
         }
         return siswaList;
     }
@@ -78,8 +77,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void update(Mahasiswa mahasiswa) {
         SQLiteDatabase db = getReadableDatabase();
         ContentValues values = new ContentValues();
-        values.put(KEY_NOMOR, mahasiswa.getNomor());
-        String whereClause = KEY_NAMA+"='" +mahasiswa.getNama()+"'";
+        values.put(KEY_NAMA, mahasiswa.getNama());
+        values.put(KEY_TANGGAL, mahasiswa.getTanggal());
+        values.put(KEY_JENKEL, mahasiswa.getJenkel());
+        values.put(KEY_ALAMAT, mahasiswa.getAlamat());
+        String whereClause = KEY_NOMOR+"='" +mahasiswa.getNomor()+"'";
         db.update(TABLE_NAME, values, whereClause, null);
     }
 

@@ -4,14 +4,18 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Mahasiswa implements Parcelable {
-    String nama,tanggal,jenkel,alamat,nomor;
+    int nomor;
+    String nama,tanggal,jenkel,alamat;
 
+    public Mahasiswa() {
 
-    public String  getNomor() {
+    }
+
+    public int getNomor() {
         return nomor;
     }
 
-    public void setNomor(String nomor)
+    public void setNomor(int nomor)
     {
         this.nomor = nomor;
     }
@@ -56,22 +60,19 @@ public class Mahasiswa implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.nomor);
         dest.writeString(this.nama);
         dest.writeString(this.tanggal);
         dest.writeString(this.jenkel);
         dest.writeString(this.alamat);
-        dest.writeString(this.nomor);
-    }
-
-    public Mahasiswa() {
     }
 
     protected Mahasiswa(Parcel in) {
+        this.nomor = in.readInt();
         this.nama = in.readString();
         this.tanggal = in.readString();
         this.jenkel = in.readString();
         this.alamat = in.readString();
-        this.nomor = in.readString();
     }
 
     public static final Parcelable.Creator<Mahasiswa> CREATOR = new Parcelable.Creator<Mahasiswa>() {

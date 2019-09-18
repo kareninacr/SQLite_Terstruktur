@@ -2,7 +2,6 @@ package com.example.sqliteterstruktur;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -30,7 +29,7 @@ public class MainCreate extends AppCompatActivity implements MahasiswaAdapter.On
         txt_input.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainCreate.this, InputData.class);
+                Intent i = new Intent(MainCreate.this, InputActivity.class);
                 startActivity(i);
             }
         });
@@ -49,8 +48,8 @@ public class MainCreate extends AppCompatActivity implements MahasiswaAdapter.On
     @Override
     public void onUserClick(Mahasiswa currentMahasiswa, String action) {
         if(action.equals("Edit")) {
-            Intent i = new Intent(MainCreate.this, UpdateData.class);
-            i.putExtra(UpdateData.CURRENT_MAHASISWA, currentMahasiswa);
+            Intent i = new Intent(MainCreate.this, UpdateActivity.class);
+            i.putExtra(UpdateActivity.CURRENT_MAHASISWA, currentMahasiswa);
             startActivity(i);
         }
         if(action.equals("Delete")) {
@@ -59,8 +58,8 @@ public class MainCreate extends AppCompatActivity implements MahasiswaAdapter.On
             setupRecyclerView();
         }
         if(action.equals("View")) {
-            Intent i = new Intent(MainCreate.this,DetailData.class);
-            i.putExtra(DetailData.CURRENT_MAHASISWA,currentMahasiswa);
+            Intent i = new Intent(MainCreate.this, DetailActivity.class);
+            i.putExtra(DetailActivity.CURRENT_MAHASISWA,currentMahasiswa);
             startActivity(i);
         }
     }

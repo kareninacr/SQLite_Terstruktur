@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_input"
+        android:id="@+id/toolbar_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -31,16 +31,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_detail">
 
-        <ListView
-            android:id="@+id/txt_nama"
-            android:layout_width="wrap_content"
-            android:layout_height="580dp"
-            android:layout_marginTop="60dp" />
-
-
-
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Nama"
+            android:textSize="20sp"/>
     </RelativeLayout>
 
 </RelativeLayout>

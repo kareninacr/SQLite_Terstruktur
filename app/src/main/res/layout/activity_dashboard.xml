@@ -9,10 +9,12 @@
         android:id="@+id/student"
         android:layout_width="180dp"
         android:layout_height="145dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="115dp"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="110dp"
+        android:layout_marginEnd="115dp"
         android:src="@drawable/student1" />
 
     <LinearLayout
@@ -41,12 +43,13 @@
             android:id="@+id/tvlihat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="12dp"
+            android:gravity="center"
             android:text="Lihat Data"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="22sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -75,12 +78,12 @@
             android:id="@+id/tvinput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="12dp"
             android:text="Input Data"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="22sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -109,12 +112,12 @@
         android:id="@+id/tvinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="12dp"
         android:text="Informasi"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="22sp"/>
 </LinearLayout>
 
 </RelativeLayout>

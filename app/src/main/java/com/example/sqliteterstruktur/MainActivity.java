@@ -1,28 +1,67 @@
 package com.example.sqliteterstruktur;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.List;
 
-import java.util.logging.LogRecord;
+public class MainActivity extends AppCompatActivity implements MahasiswaAdapter.OnUserClickListener {
+    RecyclerView recyclerView;
+    LinearLayout inputData;
+    RecyclerView.LayoutManager layoutManager;
+    List<Mahasiswa> listPersonInfo;
 
-public class MainActivity extends AppCompatActivity {
-    public final static int waktu = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_splash);
 
-        final Handler h = new Handler();
-        h.postDelayed(new Runnable() {
+        recyclerView = findViewById(R.id.recycler_data);
+        layoutManager = new LinearLayoutManager(MainActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        inputData = findViewById(R.id.inputData);
+        inputData.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                startActivity(new Intent(MainActivity.this, DashboardActivity.class));
-                finish();
-                }
-        },waktu);
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                startActivity(i);
+            }
+        });
+        setupRecyclerView();
+    }
+
+    private void setupRecyclerView() {
+        DatabaseHelper db = new DatabaseHelper(MainActivity.this);
+        listPersonInfo = db.selectUserData();
+        MahasiswaAdapter adapter = new MahasiswaAdapter(MainActivity.this, listPersonInfo,this);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onUserClick(Mahasiswa mahasiswa, String action) {
+        if(action.equals("Edit")){
+            Intent i = new Intent(MainActivity.this, UpdateActivity.class);
+            i.putExtra(UpdateActivity.CURRENT_MAHASISWA, mahasiswa);
+            startActivity(i);
+        }
+        if(action.equals("Delete")){
+            DatabaseHelper db = new DatabaseHelper(MainActivity.this);
+            db.delete(mahasiswa.getNama());
+            setupRecyclerView();
+        }
+        if(action.equals("View")) {
+            Intent i = new Intent(MainActivity.this, DetailActivity.class);
+            i.putExtra(DetailActivity.CURRENT_MAHASISWA, mahasiswa);
+            startActivity(i);
+        }
     }
 }
